@@ -1,0 +1,43 @@
+<p>login works!</p>
+<!-- Login -->
+<div class="login">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 m-auto">
+        <h1 class="display-4 text-center">Log In{{ error | json }}</h1>
+        <p class="lead text-center">Sign in to your DevConnector account</p>
+        <form (ngSubmit)="loginSubmit()">
+          <div class="form-group">
+            <input
+              type="email"
+              [ngClass]="{
+                'form-control form-control-lg': true,
+                'is-invalid': error.name
+              }"
+              placeholder="Email Address"
+              name="email"
+              [(ngModel)]="login.email"
+              required
+            />
+            <div class="d-block invalid-feedback">{{ error.email }}</div>
+          </div>
+          <div class="form-group">
+            <input
+              type="password"
+              [ngClass]="{
+                'form-control form-control-lg': true,
+                'is-invalid': error.name
+              }"
+              placeholder="Password"
+              name="password"
+              [(ngModel)]="login.password"
+              required
+            />
+            <div class="d-block invalid-feedback">{{ error.password }}</div>
+          </div>
+          <input type="submit" class="btn btn-info btn-block mt-4" />
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
