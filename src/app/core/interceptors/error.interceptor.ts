@@ -17,7 +17,7 @@ export class ErrorInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     return next.handle(request).pipe(
-      //need to capture the error details
+      //need to captssure the error details
       catchError((err) => {
         console.log(JSON.stringify(err));
         return throwError(err.error);
